@@ -50,11 +50,14 @@ function Navigation() {
               <img
                 src="/logo.png"
                 alt="SolarPark Logo"
-                className="w-14 h-14 rounded-3xl object-contain bg-white/95 p-2 shadow-lg border border-white"
+                className="w-16 h-16 rounded-3xl object-contain bg-white/95 p-2 shadow-xl border border-white"
               />
-              <span className={`font-bold text-xl transition-colors ${isScrolled ? 'text-[#273D2B]' : 'text-[#273D2B]'}`}>
-                Solar<span className="text-[#06D889]">Park</span>
-              </span>
+              <div className="leading-tight">
+                <p className={`text-lg font-bold transition-colors ${isScrolled ? 'text-[#273D2B]' : 'text-[#273D2B]'}`}>
+                  Solar<span className="text-[#06D889]">Park</span>
+                </p>
+                <p className="text-xs text-slate-500">Parcare inteligentă cu energie verde</p>
+              </div>
             </a>
 
             {/* Desktop Navigation */}
@@ -284,6 +287,29 @@ function HeroSection() {
                   Vezi Disponibilitate Live
                 </a>
               </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+              <div className="glass-card p-5 hover-lift">
+                <img src="/parking-solar.jpg" alt="Parcare solară" className="w-full h-40 object-cover rounded-3xl mb-4" />
+                <div className="text-xs uppercase tracking-[0.3em] text-[#06D889] font-semibold mb-2">Disponibil</div>
+                <h3 className="text-lg font-bold text-[#273D2B] mb-2">Parcare Eco</h3>
+                <p className="text-sm text-gray-600">Locuri securizate și umbrite, cu acces rapid și monitorizare 24/7.</p>
+              </div>
+
+              <div className="glass-card p-5 hover-lift">
+                <img src="/smart-tech.jpg" alt="Tehnologie smart" className="w-full h-40 object-cover rounded-3xl mb-4" />
+                <div className="text-xs uppercase tracking-[0.3em] text-[#06D889] font-semibold mb-2">Automat</div>
+                <h3 className="text-lg font-bold text-[#273D2B] mb-2">Control inteligent</h3>
+                <p className="text-sm text-gray-600">Recunoaștere LPR, bariere automate și indicatori live pentru fiecare loc.</p>
+              </div>
+
+              <div className="glass-card p-5 hover-lift">
+                <img src="/solar-tech.jpg" alt="Tehnologie solară" className="w-full h-40 object-cover rounded-3xl mb-4" />
+                <div className="text-xs uppercase tracking-[0.3em] text-[#06D889] font-semibold mb-2">Sustainable</div>
+                <h3 className="text-lg font-bold text-[#273D2B] mb-2">Energie solară</h3>
+                <p className="text-sm text-gray-600">Panouri eficiente care produc energie pentru iluminat, încărcare EV și economii reale.</p>
+              </div>
             </div>
           </div>
 
