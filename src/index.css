@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 140 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 140 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 20% 15%;
+    --primary: 152 95% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 140 30% 95%;
+    --secondary-foreground: 140 20% 15%;
+    --muted: 140 20% 96%;
+    --muted-foreground: 140 10% 40%;
+    --accent: 50 100% 50%;
+    --accent-foreground: 140 20% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 140 20% 90%;
+    --input: 140 20% 90%;
+    --ring: 152 95% 43%;
+    --radius: 0.75rem;
+    
+    /* Custom SolarPark Colors */
+    --solar-green: #06D889;
+    --solar-dark-green: #273D2B;
+    --solar-light-green: #E8F5E9;
+    --solar-yellow: #FFD600;
+    --solar-black: #000000;
+    --solar-white: #FFFFFF;
+    --solar-gray: #F5F5F5;
+    --solar-dark-gray: #333333;
+    
+    /* Animation Easings */
+    --ease-orbital: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.8, 0.64, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative overflow-hidden bg-gradient-to-r from-[#06D889] to-[#05b876] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-lg shadow-[#06D889]/40;
+  }
+  
+  .btn-secondary {
+    @apply relative bg-transparent text-[#273D2B] px-8 py-4 rounded-xl font-semibold border-2 border-[#273D2B] transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-[#273D2B] text-white -translate-y-0.5;
+  }
+  
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-xl rounded-3xl border border-white/50 shadow-xl;
+  }
+  
+  .section-label {
+    @apply inline-flex items-center gap-2 text-[#06D889] font-semibold text-sm uppercase tracking-wider;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#06D889] to-[#FFD600] bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 1s;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-gradient-flow {
+    animation: gradient-flow 8s linear infinite;
+    background-size: 200% 100%;
+  }
+  
+  .animate-count-up {
+    animation: count-up 2s ease-out forwards;
+  }
+  
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(6, 216, 137, 0.5);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(6, 216, 137, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(6, 216, 137, 0.6); }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #06D889;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #05b876;
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(6, 216, 137, 0.3);
+  color: #273D2B;
+}
